@@ -203,6 +203,7 @@ def generate(
         kwargs["thinking"] = {"type": "disabled"}
     elif "rlor" in model:
         kwargs["base_url"] = "http://localhost:11434/v1",
+        kwargs["provider"] = "openai"
     elif "fireworks" in model:
         kwargs["base_url"] = "https://api.fireworks.ai/inference/v1"
     litellm_messages = to_litellm_messages(messages)
