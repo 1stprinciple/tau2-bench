@@ -204,6 +204,7 @@ def generate(
     elif "rlor" in model:
         kwargs["base_url"] = "http://localhost:11434/v1"
         kwargs["custom_llm_provider"] = "openai"
+        print("openai kwargs", kwargs)
         del kwargs["seed"]
     elif "fireworks" in model:
         kwargs["base_url"] = "https://api.fireworks.ai/inference/v1"
