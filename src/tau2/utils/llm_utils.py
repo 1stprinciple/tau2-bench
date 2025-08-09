@@ -201,7 +201,7 @@ def generate(
 
     if model.startswith("claude") and not ALLOW_SONNET_THINKING:
         kwargs["thinking"] = {"type": "disabled"}
-    elif model.startswith("rlor"):
+    elif "rlor" in model:
         kwargs["base_url"] = "http://localhost:11434/v1",
     elif "fireworks" in model:
         kwargs["base_url"] = "https://api.fireworks.ai/inference/v1"
