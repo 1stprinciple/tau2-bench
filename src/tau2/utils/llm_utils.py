@@ -201,6 +201,10 @@ def generate(
 
     if model.startswith("claude") and not ALLOW_SONNET_THINKING:
         kwargs["thinking"] = {"type": "disabled"}
+    elif model.startswith("rlor"):
+        kwargs["base_url"] = "http://localhost:11434/v1",
+    elif "fireworks" in model:
+        kwargs["base_url"] = "https://api.fireworks.ai/inference/v1"
     litellm_messages = to_litellm_messages(messages)
     tools = [tool.openai_schema for tool in tools] if tools else None
     if tools and tool_choice is None:
