@@ -95,7 +95,7 @@ def get_response_cost(response: ModelResponse) -> float:
     try:
         cost = completion_cost(completion_response=response)
     except Exception as e:
-        logger.error(e)
+        # logger.error(e)
         return 0.0
     return cost
 
@@ -203,7 +203,7 @@ def generate(
         kwargs["thinking"] = {"type": "disabled"}
     elif "rlor" in model:
         kwargs["base_url"] = "http://localhost:11434/v1"
-        kwargs["custom_llm_provider"] = "hosted_vllm"
+        kwargs["custom_llm_provider"] = "openai"
         del kwargs["seed"]
     elif "fireworks" in model:
         kwargs["base_url"] = "https://api.fireworks.ai/inference/v1"
