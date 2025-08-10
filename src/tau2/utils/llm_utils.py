@@ -148,7 +148,7 @@ def to_litellm_messages(messages: list[Message]) -> list[dict]:
                 tool_calls = [
                     {
                         "id": tc.id,
-                        "name": tc.name,
+                        # "name": tc.name,
                         "function": {
                             "name": tc.name,
                             "arguments": json.dumps(tc.arguments),
