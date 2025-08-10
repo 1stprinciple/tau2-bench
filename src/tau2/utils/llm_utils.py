@@ -203,7 +203,7 @@ def generate(
         kwargs["thinking"] = {"type": "disabled"}
     elif "rlor" in model:
         kwargs["base_url"] = "http://localhost:11434/v1"
-        kwargs["custom_llm_provider"] = "openai"
+        kwargs["custom_llm_provider"] = "hosted_vllm"
         del kwargs["seed"]
     elif "fireworks" in model:
         kwargs["base_url"] = "https://api.fireworks.ai/inference/v1"
